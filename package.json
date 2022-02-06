@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "ExpressJS Backend for Zombie-Chat",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zombie-Chat/backend.git"
+  },
+  "author": "David Heath",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/Zombie-Chat/backend/issues"
+  },
+  "homepage": "https://github.com/Zombie-Chat/backend#readme"
+}
