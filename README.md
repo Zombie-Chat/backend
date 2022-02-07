@@ -1,11 +1,18 @@
 # Zombie-Chat Backend
 
+![GitHub](https://img.shields.io:/github/license/Zombie-Chat/backend)
+![GitHub issues](https://img.shields.io:/github/issues/Zombie-Chat/backend)
+![GitHub package.json version](https://img.shields.io:/github/package-json/v/Zombie-Chat/backend)
+[![Node.js CI](https://github.com/Zombie-Chat/backend/actions/workflows/backend.js.yml/badge.svg)](https://github.com/Zombie-Chat/backend/actions/workflows/backend.js.yml)
+
 Zombie Chat is a real time chat system that you can run yourself. Or you can pay us to run it for you.
 
-####Why would I want to run it myself?
+#### Why would I want to run it myself?
+
 Good Question, Simple answer Freedom. It's yours do with it what you want
 
-####Are Their rules if you host it for me?
+#### Are Their rules if you host it for me?
+
 Yes, Probably, depending on which cloud provider and country it is hosted in there will be rules.
 Check out [URL here](https://url-here) for more information.
 
@@ -56,11 +63,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ## Configure app
 
-Open `a/nice/path/to/a.file` then edit it with your settings. You will need:
-
-- A setting;
-- Another setting;
-- One more setting;
+TBD
 
 ## Running the project
 

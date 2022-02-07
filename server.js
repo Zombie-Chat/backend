@@ -59,8 +59,16 @@ app.get('/', function (req, res, next) {
 });
 
 const server = http.createServer(app);
-server.listen(PORT, () => {
-  console.log(`Server is listening on ${PORT}`);
-});
+
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    server.listen(PORT, () => {
+      console.log(`Server is listening on ${PORT}`);
+    });
+  })
+  .catch(() => {
+    console.log('Database not connected');
+  });
 
 module.exports = app;
