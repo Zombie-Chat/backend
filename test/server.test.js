@@ -17,12 +17,12 @@ var should = require('chai').should();
 var app = require('../server');
 
 describe('Server', function () {
-  it('should pass', function (done) {
+  it('should pass with 404', function (done) {
     server(app)
       .get('/')
       .end(function (err, res) {
         if (err) done(err);
-        res.status.should.equal(200);
+        res.status.should.equal(404);
 
         done();
       });

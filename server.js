@@ -41,6 +41,7 @@
  * ----------	---	----------------------------------------------------------
  */
 
+// Imported Modules
 const express = require('express');
 
 const http = require('http');
@@ -48,18 +49,23 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+// App Modules
+const authRoutes = require('./routes/authRoutes');
+
+// Define the Port for the backlend
 const PORT = process.env.PORT || process.env.API_PORT;
 
+// Setup the Server
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get('/', function (req, res, next) {
-  res.status(200).send('ok');
-});
+// Register the routes
+app.use('/api/auth', authRoutes);
 
 const server = http.createServer(app);
 
+// Setup the Database connection
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
@@ -71,4 +77,5 @@ mongoose
     console.log('Database not connected');
   });
 
+// Export for testing
 module.exports = app;
