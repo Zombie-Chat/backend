@@ -16,15 +16,37 @@
 const express = require('express');
 const router = express.Router();
 
+const joi = require('joi');
+const validator = require('express-joi-validation').createValidator({});
+
+// app module imports
+const authController = require('../controllers/auth/authController');
+
+// Schema
+const registerSchema = joi.object({
+  username: joi.string().min(3).max(12).required(),
+  password: joi.string().min(8).max(255).required(),
+  email: joi.string().email().required(),
+});
+
+const loginSchema = joi.object({
+  email: joi.string().email().required(),
+  password: joi.string().min(8).max(255).required(),
+});
+
 //Register a new user
 
-router.post('/register', (req, res) => {
-  res.send('register route');
-});
+router.post(
+  '/register',
+  validator.body(registerSchema),
+  authController.controllers.postRegister
+);
 
 // Login to the backend
-router.post('/login', (req, res) => {
-  res.send('login route');
-});
+router.post(
+  '/login',
+  validator.body(loginSchema),
+  authController.controllers.postLogin
+);
 
 module.exports = router;
